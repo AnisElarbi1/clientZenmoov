@@ -1,0 +1,33 @@
+fieldset {
+  border: 2px solid #ddd;
+  margin: 0;
+  padding: 10px;
+  position: relative;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+legend {
+  font-size: 14px;
+  font-weight: bold;
+  width: 35%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 5px 5px 10px;
+  background-color: #ffffff;
+}
+
+table tr.highlight {
+  background-color: #99d6ff ;
+  color: #ffffff;
+}
+
+table th{
+  background-color: #dddddd;
+}
+
+#scrolltable {
+  height: 200px;
+  overflow: auto;
+}
+

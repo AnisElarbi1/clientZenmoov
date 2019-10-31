@@ -1,0 +1,56 @@
+
+<div class="container spaceFromTop">
+
+  <div style="text-align: center;">
+    <b>Liste des clients</b>
+  </div>
+  <br>
+  <div class="table-wrapper-scroll-y my-custom-scrollbar" id="scrolltable">
+
+    <table class="table table-bordered col-md-12" >
+      <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clients; index as i" (click)="selectedRow(client,i)"
+          [ngClass]="{'highlight' : radioButton == i+1}">
+        <td>
+          <input type="radio" [value]="i+1" (change)="onItemChange(client)" name="client" [(ngModel)]="radioButton">
+        </td>
+        <td>{{client.nom}}</td>
+        <td>{{client.prenom}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<div class="container" *ngIf="showFieldSet">
+  <br/>
+  <div class="panel panel-default">
+
+    <div class="panel-body">
+
+      <fieldset class="col-md-6">
+        <legend>Détails</legend>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p><b>Adresse</b> : {{selectedClient.adresse}}</p>
+          </div>
+        </div>
+
+      </fieldset>
+
+    </div>
+
+  </div>
+</div>
+
+

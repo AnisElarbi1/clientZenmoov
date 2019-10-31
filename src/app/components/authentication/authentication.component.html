@@ -1,0 +1,55 @@
+<div class="alert alert-danger" *ngIf='invalidLogin'>{{ errorMessage }}</div>
+
+<main class="spaceFromTop">
+  <div class="cotainer">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header" style="text-align: center;">
+            <b>Veuillez vous authentifier.</b>
+          </div>
+          <div class="card-body">
+
+            <form (ngSubmit)="!loginForm.invalid && authenticate()" #loginForm="ngForm">
+
+
+              <div class="form-group row">
+                <label for="utilisateur" class="col-md-4 col-form-label text-md-right">Utilisateur : </label>
+                <div class="col-md-6">
+                  <input type="text" id="utilisateur" class="form-control" name="utilisateur" required autofocus
+                         [(ngModel)]="login">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="password" class="col-md-4 col-form-label text-md-right">Mot de passe : </label>
+                <div class="col-md-6">
+                  <input type="password" id="password" class="form-control" name="password" required
+                         [(ngModel)]="motDePasse">
+                </div>
+              </div>
+
+              <div class="col-md-8 offset-md-4">
+                <button type="submit" class="btn btn-primary">Valider</button>
+                <button type="reset" class="btn btn-danger">Annuler</button>
+              </div>
+
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<ngx-spinner
+  bdOpacity = 0.9
+  bdColor = "#21356c"
+  size = "large"
+  color = "#f28820"
+  type = "square-loader"
+  [fullScreen] = "true">
+  <p style="color: white" >Trying to log in</p>
+</ngx-spinner>
